@@ -18,8 +18,8 @@ public class Controller {
 
     @RequestMapping(value = "/home", method = RequestMethod.POST)
     public String homePage(HttpServletRequest request, Model model) {
-        String name = request.getParameter("name");
-        model.addAttribute("name", name);
+        String name = request.getParameter("username");
+        model.addAttribute("username", name);
         return "home";
     }
 
