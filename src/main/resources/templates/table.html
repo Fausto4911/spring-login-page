@@ -16,17 +16,17 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="#">
-                    Start Bootstrap
+                    Inventory Web App
                 </a>
             </li>
             <li>
-                <a href="#">Dashboard</a>
+                <a href="#">Sales</a>
             </li>
             <li>
-                <a href="#">Shortcuts</a>
+                <a href="#">Products</a>
             </li>
             <li>
-                <a href="#">Overview</a>
+                <a href="#">Inventory</a>
             </li>
             <li>
                 <a href="#">Events</a>
@@ -38,7 +38,9 @@
                 <a href="#">Services</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Sign Out"/>
+                </form>
             </li>
         </ul>
     </div>
