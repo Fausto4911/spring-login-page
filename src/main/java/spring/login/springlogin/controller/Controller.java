@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 @org.springframework.stereotype.Controller
 public class Controller {
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginRegistration() {
-        return "login";
-    }
+//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//    public String loginRegistration() {
+//        return "login";
+//    }
 
 //    @RequestMapping(value = "/home", method = RequestMethod.POST)
 //    public String homePage(HttpServletRequest request, Model model) {
