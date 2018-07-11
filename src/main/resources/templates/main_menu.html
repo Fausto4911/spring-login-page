@@ -7,41 +7,37 @@
     <script th:src="@{//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js}"></script>
     <script th:src="@{//code.jquery.com/jquery-1.11.1.min.js}"></script>
 </head>
-
 <body>
 <div th:fragment="body" id="wrapper">
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    Inventory Web App
-                </a>
-            </li>
-            <li>
-                <a href="#"><span class="glyphicon glyphicon-signal"></span> Sales</a>
-            </li>
-            <li>
-                <a href="products" th:href="@{products}"><span class="glyphicon glyphicon-shopping-cart"></span>
-                    Products</a>
-            </li>
-            <li>
-                <a href="#"><span class="glyphicon glyphicon-folder-open"></span> Inventory</a>
-            </li>
-            <li>
-                <a href="#"><span class="glyphicon glyphicon-lock"></span> About</a>
-            </li>
-            <li>
-                <a href="#"> <span class="glyphicon glyphicon-lock"></span> Services</a>
-            </li>
-            <li>
-                <form th:action="@{/logout}" method="post">
-                    <span class="glyphicon glyphicon-log-out"></span>
-                    <input type="submit" value="Sign Out" class="btn btn-danger"/>
-                </form>
-            </li>
-        </ul>
-    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Inventory App</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-signal"></span> Sales</a>
+                </li>
+                <li>
+                    <a href="/products" th:href="@{products}"><span class="glyphicon glyphicon-shopping-cart"></span>Products</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-folder-open"></span> Inventory</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-lock"></span> About</a>
+                </li>
+                <li>
+                    <a href="#"> <span class="glyphicon glyphicon-lock"></span> Services</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/login?logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+            </ul>
+
+        </div>
+    </nav>
 </div>
 </body>
 </html>
