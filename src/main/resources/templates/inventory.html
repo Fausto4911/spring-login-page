@@ -24,7 +24,8 @@
             <span class="icon-bar"></span>
         </button>
         <!--<a class="navbar-brand" href="#">Logo</a>-->
-        <img src="http://www.free-icons-download.net/images/inventory-maintenance-94840.png" class="img-thumbnail" style="width:10%">
+        <img src="http://www.free-icons-download.net/images/inventory-maintenance-94840.png" class="img-thumbnail"
+             style="width:10%">
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -101,30 +102,18 @@
         <table class="table row">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">1</td>
+                <td><a href="#" th:text="${product.name}">Title ...</a></td>
+                <td th:text="${product.description}">Text ...</td>
+                <td th:text="${product.quantity}">Text ...</td>
             </tr>
             </tbody>
         </table>
