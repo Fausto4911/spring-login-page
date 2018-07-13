@@ -17,6 +17,24 @@
 <body>
 
 <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!--<a class="navbar-brand" href="#">Logo</a>-->
+        <img src="http://www.free-icons-download.net/images/inventory-maintenance-94840.png" class="img-thumbnail" style="width:10%">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inventory</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login?logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+        </ul>
+    </div>
+
     <div class="jumbotron">
         <form class="form-horizontal row">
             <fieldset>
@@ -30,10 +48,8 @@
                     <div class="col-md-4">
                         <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md"
                                required="" type="text">
-
                     </div>
                 </div>
-
                 <!-- Text input-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>
@@ -41,7 +57,6 @@
                         <input id="product_name" name="product_name" placeholder="PRODUCT NAME"
                                class="form-control input-md"
                                required="" type="text">
-
                     </div>
                 </div>
                 <!-- Text input-->
@@ -113,7 +128,7 @@
             </tr>
             </tbody>
         </table>
-</div>
+    </div>
 </div>
 </body>
 </html>
