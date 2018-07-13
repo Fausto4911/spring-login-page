@@ -11,16 +11,26 @@ import javax.servlet.http.HttpServletRequest;
 @org.springframework.stereotype.Controller
 public class Controller {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String loginRegistration() {
-        return "login";
-    }
+//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//    public String loginRegistration() {
+//        return "login";
+//    }
 
-    @RequestMapping(value = "/home", method = RequestMethod.POST)
-    public String homePage(HttpServletRequest request, Model model) {
-        String name = request.getParameter("name");
-        model.addAttribute("name", name);
-        return "home";
-    }
+//    @RequestMapping(value = "/home", method = RequestMethod.POST)
+//    public String homePage(HttpServletRequest request, Model model) {
+//        String name = request.getParameter("username");
+//        if (name.equals("emma")) {
+//            model.addAttribute("username", name);
+//            return "home";
+//        }
+//        else return "error";
+//    }
+
+//    @RequestMapping(value = "/home", method = RequestMethod.GET)
+//    public String getHome() {
+//        return "home";
+//    }
+//
+
 
 }

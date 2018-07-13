@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Main Page Application</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
-    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
-    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <title>Hello World!</title>
 </head>
 <body>
-<div class="container">
-    <!--/*@thymesVar id="name" type=""*/-->
-    <h1 th:text="${name}"></h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, autem cumque deserunt eaque eius eligendi eos
-        fugit
-        illum inventore laudantium nemo odio odit optio provident quaerat qui ratione sapiente vitae.</p>
-    <img th:src="@{/images/soyleyenda.jpg}" class="img-rounded" alt="Cinque Terre"/>
-</div>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>

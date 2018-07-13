@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css}" rel="stylesheet"
+          id="bootstrap-css">
+    <link th:href="@{/css/table.css}" rel="stylesheet">
+    <script th:src="@{//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js}"></script>
+    <script th:src="@{//code.jquery.com/jquery-1.11.1.min.js}"></script>
+</head>
+<body>
+<div th:fragment="body" id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Inventory App</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-signal"></span> Sales</a>
+                </li>
+                <li>
+                    <a href="/products" th:href="@{products}"><span class="glyphicon glyphicon-shopping-cart"></span>Products</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-folder-open"></span> Inventory</a>
+                </li>
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-lock"></span> About</a>
+                </li>
+                <li>
+                    <a href="#"> <span class="glyphicon glyphicon-lock"></span> Services</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/login?logout"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+</body>
+</html>
