@@ -87,6 +87,8 @@
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Quantity</th>
+                <th scope="col"> Edit</th>
+                <th scope="col"> Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -95,6 +97,9 @@
                 <td><a href="#" th:text="${product.name}">Title ...</a></td>
                 <td th:text="${product.description}">Text ...</td>
                 <td th:text="${product.quantity}">Text ...</td>
+                <td><button type="button" class="btn btn-success">Edit</button> </td>
+                <td><button type="button" class="btn btn-danger">Delete</button></td>
+
             </tr>
             </tbody>
         </table>
