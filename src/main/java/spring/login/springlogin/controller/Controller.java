@@ -45,10 +45,10 @@ public class Controller {
 
     @RequestMapping(value = "/inventory/edit/{id}", method = RequestMethod.GET)
     public String editProduct(@PathVariable String id, Model model) {
+        model.addAttribute("edited_product", productService.getProduct(Long.valueOf(id)));
         productService.deleteProduct(Long.valueOf(id));
         model.addAttribute("products", productService.getProductList());
-        return "inventory";
+        return "edit_product";
     }
-
 
 }
