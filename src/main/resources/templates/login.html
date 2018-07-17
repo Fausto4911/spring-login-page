@@ -9,27 +9,37 @@
     <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
     <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
     <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <style>
+        .background-body {
+            background-color: #b8c1c1;
+        }
+    </style>
 </head>
-<body>
-<div class="jumbotron">
+<body  class="background-body">
+<div >
     <div class="container">
-        <form method="post" th:action="@{/login}">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="username" type="text" class="form-control" name="username" placeholder="username">
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-            </div>
-            <div class="alert alert-danger" th:if="${param.error}">
-                <strong>Warning!</strong> Invalid username and password.
-            </div>
-            <div class="alert alert-warning" th:if="${param.logout}">
-                <strong>Warning!</strong> You have been logged out.
-            </div>
-            <button type="submit" value="Sign In" class="btn btn-primary btn-md">Sign in</button>
-        </form>
+        <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <legend>LOGIN</legend>
+            <form method="post" th:action="@{/login}">
+                <div style="padding-top:10px" class="input-group padding-top">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="username" type="text" class="form-control" name="username" placeholder="username">
+                </div>
+                <div style="padding-top:20px" class="input-group padding-top">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div style="padding-top:20px" class="alert alert-danger margin-top" th:if="${param.error}">
+                    <strong>Warning!</strong> Invalid username and password.
+                </div>
+                <div style="padding-top:20px" class="alert alert-warning margin-top" th:if="${param.logout}">
+                    <strong>Warning!</strong> You have been logged out.
+                </div>
+                <div style="padding-top:20px">
+                    <button type="submit" value="Sign In" class="btn btn-primary login-btn btn-block">Sign in</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
