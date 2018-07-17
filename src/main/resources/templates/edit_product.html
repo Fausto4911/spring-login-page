@@ -10,51 +10,57 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .background-body {
+            background-color: #b8c1c1;
+        }
+    </style>
 </head>
-<body>
+<body class="background-body">
 <div class="container">
-<div class="jumbotron">
-<form class="form-horizontal row" action="#" th:action="@{/inventory}" method="post" th:object="${post}">
-    <fieldset>
-        <legend>EDITING PRODUCT</legend>
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label">PRODUCT NAME</label>
-            <div class="col-md-4">
-                <input type="text"  id="name" name="name" th:value="${edited_product.name}" placeholder="PRODUCT NAME" class="form-control input-md" required/>
-            </div>
-        </div>
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label">AVAILABLE QUANTITY</label>
-            <div class="col-md-4">
-                <input type="number" id="quantity" name="quantity"  placeholder="AVAILABLE QUANTITY" th:value="${edited_product.quantity}"
-                       class="form-control input-md" required/>
-            </div>
-        </div>
-        <!-- Textarea -->
-        <div class="form-group">
-            <label class="col-md-4 control-label">PRODUCT DESCRIPTION</label>
-            <div class="col-md-4">
-                <input type="text" id="description" name="description" placeholder="DESCRIPTION" th:value="${edited_product.description}"
-                       class="form-control input-md" required/>
+    <div class="jumbotron">
+        <form class="form-horizontal row" action="#" th:action="@{/inventory}" method="post" th:object="${post}">
+            <fieldset>
+                <legend>EDITING PRODUCT</legend>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">PRODUCT NAME</label>
+                    <div class="col-md-4">
+                        <input type="text" id="name" name="name" th:value="${edited_product.name}"
+                               placeholder="PRODUCT NAME" class="form-control input-md" required/>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">AVAILABLE QUANTITY</label>
+                    <div class="col-md-4">
+                        <input type="number" id="quantity" name="quantity" placeholder="AVAILABLE QUANTITY"
+                               th:value="${edited_product.quantity}"
+                               class="form-control input-md" required/>
+                    </div>
+                </div>
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">PRODUCT DESCRIPTION</label>
+                    <div class="col-md-4">
+                        <input type="text" id="description" name="description" placeholder="DESCRIPTION"
+                               th:value="${edited_product.description}"
+                               class="form-control input-md" required/>
 
-            </div>
-        </div>
-        <!-- Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label">Save Product</label>
-            <div class="col-md-4">
-                <button name="singlebutton" type="submit" class="btn btn-success">Save
-                </button>
-            </div>
-        </div>
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Save Product</label>
+                    <div class="col-md-4">
+                        <button name="singlebutton" type="submit" class="btn btn-success">Save
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
 
-
-    </fieldset>
-
-</form>
-</div>
+        </form>
+    </div>
 </div>
 </body>
 </html>
