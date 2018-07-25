@@ -44,11 +44,18 @@ public class Controller {
     }
 
     @RequestMapping(value = "/inventory/edit/{id}", method = RequestMethod.GET)
-    public String editProduct(@PathVariable String id, Model model) {
+    public String editProductForm(@PathVariable String id, Model model) {
         model.addAttribute("edited_product", productService.getProduct(Long.valueOf(id)));
-        productService.deleteProduct(Long.valueOf(id));
-        model.addAttribute("products", productService.getProductList());
         return "edit_product";
+    }
+
+    @RequestMapping(value = "/inventory/edit/{id}", method = RequestMethod.POST)
+    public String editProductFormConfirmation(@PathVariable String id, @Valid ProductPost post, Model model) {
+        Product product = productService.getProduct(Long.valueOf(id));
+        product.setName(post.getName()).setQuantity(post.getQuantity()).setDescription(post.getDescription());
+        productService.flush();
+        model.addAttribute("products", productService.getProductList());
+        return "inventory";
     }
 
 }

@@ -19,7 +19,7 @@
 <body class="background-body">
 <div class="container">
     <div class="jumbotron">
-        <form class="form-horizontal row" action="#" th:action="@{/inventory}" method="post" th:object="${post}">
+        <form class="form-horizontal row" action="#" th:href="@{'/inventory/delete/' + ${edited_product.id}}" method="post" th:object="${post}">
             <fieldset>
                 <legend>EDITING PRODUCT</legend>
                 <!-- Text input-->

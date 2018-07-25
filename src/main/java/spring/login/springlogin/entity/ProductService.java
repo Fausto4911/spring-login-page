@@ -1,9 +1,11 @@
 package spring.login.springlogin.entity;
 
 
+import org.h2.engine.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.login.springlogin.post.ProductPost;
+import sun.rmi.runtime.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +40,14 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public void updateProduct(Product pd) {
-        productRepository.save(pd);
+    public void updateProduct(Long id, Product pd) {
+        Product product = new Product();
+        product.setName(pd.getName()).setDescription(pd.getDescription()).setQuantity(pd.getQuantity());
+        productRepository.save(product);
 
     }
 
-
+    public void flush() {
+        productRepository.flush();
+    }
 }
