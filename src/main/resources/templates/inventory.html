@@ -83,7 +83,40 @@
             </fieldset>
 
         </form>
+        <div th:if="${deleteForm == true}">
+            <form class="form-horizontal row" action="#" th:action="@{'/inventory/delete/' + ${productToDelete.id}}" method="post" th:object="${productToDelete}">
+                <fieldset>
+                    <legend>ARE YOU WANT TO DELETE THIS PRODUCT ?</legend>
 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">PRODUCT NAME</label>
+                        <div class="col-md-4">
+                            <h4 th:text="${productToDelete.name}"></h4>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Delete Product</label>
+                        <div class="col-md-4">
+                            <button name="singlebutton" type="submit" class="btn btn-danger">Delete
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                </fieldset>
+            </form>
+            <div class="row">
+                <div class="col-sm-8" >
+                </div>
+                <div class="col-sm-4" >
+                    <h4>Discard<a th:href="@{/inventory}"><span class="glyphicon glyphicon-log-out"></span></a>
+                    </h4>
+                </div>
+
+
+            </div>
+
+        </div>
 
         <table class="table row">
             <thead class="thead-dark">
@@ -104,7 +137,6 @@
                 <td th:text="${product.quantity}">Text ...</td>
                 <td><a th:href="@{'/inventory/edit/' + ${product.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td><a th:href="@{'/inventory/delete/' + ${product.id}}"><span class="glyphicon glyphicon-trash"></span></a></td>
-
             </tr>
             </tbody>
         </table>

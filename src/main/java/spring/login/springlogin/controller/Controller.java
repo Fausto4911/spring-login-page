@@ -38,7 +38,17 @@ public class Controller {
 
     @RequestMapping(value = "/inventory/delete/{id}", method = RequestMethod.GET)
     public String removeProduct(@PathVariable String id, Model model) {
+      model.addAttribute("deleteForm",true);
+     Product product =  productService.getProduct(Long.valueOf(id));
+      model.addAttribute("productToDelete",product);
+//        productService.deleteProduct(Long.valueOf(id));
+        model.addAttribute("products", productService.getProductList());
+        return "inventory";
+    }
+    @RequestMapping(value = "/inventory/delete/{id}", method = RequestMethod.POST)
+    public String removeProductConfirmation(@PathVariable String id, Model model) {
         productService.deleteProduct(Long.valueOf(id));
+        model.addAttribute("deleteForm",false);
         model.addAttribute("products", productService.getProductList());
         return "inventory";
     }
